@@ -1,3 +1,5 @@
+mod easy_problems;
 fn main() {
-    println!("Hello, world!");
+
+    easy_problems::plus_one::run_plus_one();
 }
