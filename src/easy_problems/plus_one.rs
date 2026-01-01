@@ -9,7 +9,7 @@
 
 use rand::{Rng, rng, rngs::ThreadRng};
 
-pub fn plus_one(digits: Vec<u32>) -> Vec<u32>{
+fn plus_one(digits: Vec<i32>) -> Vec<i32>{
     let mut tmp_array = digits;
 
     // reverse the array order
@@ -31,8 +31,8 @@ pub fn plus_one(digits: Vec<u32>) -> Vec<u32>{
     return tmp_array;
 }
 
-pub fn setup(size: u32) -> Vec<u32> {
-    let mut tmp_arry: Vec<u32> = Vec::new();
+fn setup(size: i32) -> Vec<i32> {
+    let mut tmp_arry: Vec<i32> = Vec::new();
     let mut rng: ThreadRng = rng();
 
     for pos in 0..size {
@@ -45,13 +45,16 @@ pub fn setup(size: u32) -> Vec<u32> {
         
     }
     
-    println!("Inital Array: {:?}", tmp_arry);
+    println!("Inital:\t{:?}", tmp_arry);
     return tmp_arry;
 }
 
 pub fn run_plus_one(){
+    // let input = vec!{1,1,0};
+    // let input = vec!{9,9,9}; 
+    // let input = vec!{1,8,9,9};
     let input = setup(10);
     let ouput = plus_one(input);
 
-    println!("Final Array: {:?}", ouput);
+    println!("Final:\t{:?}", ouput);
 }
